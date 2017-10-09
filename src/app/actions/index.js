@@ -14,7 +14,7 @@ const divideAction = () => ({
     type: 'DIVIDE'
 });
 
-const pressInteger = (val) => ({
+const pressKey = (val) => ({
     type: 'KEYPRESS',
     value: val
 });
@@ -22,3 +22,17 @@ const pressInteger = (val) => ({
 const equalsAction = () => ({
     type: 'EQUALS'
 });
+
+const clearAction = () => ({
+    type: 'CLEAR'
+});
+
+export default  {
+    addAction,
+    subtractAction,
+    multiplyAction,
+    divideAction,
+    pressKey,
+    equalsAction,
+    clearAction
+}

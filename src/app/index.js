@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
-import App from './components/App';
+import AppContainer from './components/App_container';
 
 import reducers from './reducers';
 
@@ -14,6 +14,6 @@ const store = createStoreWithMiddleware(reducers);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <AppContainer />
   </Provider>
   , document.getElementById('root'));

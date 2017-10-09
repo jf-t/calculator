@@ -12,6 +12,8 @@ const rootReducer = (state = {}, action) => {
             return state;
         case 'EQUALS':
             return state;
+        case 'CLEAR':
+            return state;
         default:
             return state;
     }
