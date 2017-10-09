@@ -1,5 +1,11 @@
-@import './common/base/variables';
-@import './common/base/global';
-@import './common/header';
-@import './home/home';
-@import './about/about';
+@import './buttons/buttons';
+@import './output/output';
+
+
+
+.container {
+    width: 50%;
+    left: 25%;
+    position: absolute;
+    top: 10%;
+}

@@ -1,0 +1,9 @@
+$light-gray: #efefef;
+
+.output-bar {
+    width: 100%;
+    height: 100px;
+    background: $light-gray;
+    border: 1px solid #333;
+    box-sizing: border-box;
+}

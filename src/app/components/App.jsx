@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react';
-import Header from './common/Header';
+import OutputComponent from './output/Output';
+import ButtonsComponent from './buttons/Buttons';
 
 function App({ children }) {
   return (
     <div className="container">
-      <Header />
-      {children}
+      <OutputComponent />
+      <ButtonsComponent />
     </div>
   );
 }
