@@ -5,12 +5,13 @@ import { createStore, applyMiddleware } from 'redux';
 
 import AppContainer from './components/App_container';
 
-import reducers from './reducers';
+import logicMiddleware from './middleware/main';
+
+import rootReducer from './reducers/index';
 
 import './components/bundle.scss';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
-const store = createStoreWithMiddleware(reducers);
+const store = createStore(rootReducer, applyMiddleware(logicMiddleware))
 
 ReactDOM.render(
   <Provider store={store}>

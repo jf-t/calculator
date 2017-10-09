@@ -26,3 +26,8 @@ export const equalsAction = () => ({
 export const clearAction = () => ({
     type: 'CLEAR'
 });
+
+export const changeOutput = (output) => ({
+    type: 'CHANGED_VALUE',
+    value: output
+});

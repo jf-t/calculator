@@ -32,6 +32,7 @@
     "html-webpack-plugin": "^2.16.1",
     "jquery": "^2.2.3",
     "jsdom": "^9.0.0",
+    "lodash": "^4.17.4",
     "mocha": "^2.4.5",
     "node-sass": "^3.7.0",
     "react-addons-test-utils": "^15.0.2",
