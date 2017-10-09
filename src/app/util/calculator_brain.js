@@ -15,8 +15,6 @@ const brain = {
 
         if (this.firstValue) {
             this.operator = operator;
-        } else {
-            // error handling
         }
 
         this.outputValue = this.firstValue;
@@ -62,7 +60,7 @@ const brain = {
             this.secondValue = '';
             this.operator = '';
         }
-        
+
         if (this.operator != '') {
             this.secondValue += '.';
             this.outputValue = this.secondValue;
@@ -83,10 +81,10 @@ const brain = {
         }
 
         if (this.operator != '') {
-            this.secondValue = (-1 * parseInt(this.secondValue)).toString();
+            this.secondValue = (-1 * parseFloat(this.secondValue)).toString();
             this.outputValue = this.secondValue;
         } else {
-            this.firstValue = (-1 * parseInt(this.firstValue)).toString();
+            this.firstValue = (-1 * parseFloat(this.firstValue)).toString();
             this.outputValue = this.firstValue;
         }
 
