@@ -24,4 +24,4 @@ ReactDOM.render(
       </Route>
     </Router>
   </Provider>
-  , document.getElementById('react-root'));
+  , document.getElementById('root'));
