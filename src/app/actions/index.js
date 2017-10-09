@@ -1,38 +1,28 @@
-const addAction  =() => ({
+export const addAction = () => ({
     type: 'ADD'
 });
 
-const subtractAction = () => ({
+export const subtractAction = () => ({
     type: 'SUBTRACT'
 });
 
-const multiplyAction = () => ({
+export const multiplyAction = () => ({
     type: 'MULTIPLY'
 });
 
-const divideAction = () => ({
+export const divideAction = () => ({
     type: 'DIVIDE'
 });
 
-const pressKey = (val) => ({
+export const pressKey = (val) => ({
     type: 'KEYPRESS',
     value: val
 });
 
-const equalsAction = () => ({
+export const equalsAction = () => ({
     type: 'EQUALS'
 });
 
-const clearAction = () => ({
+export const clearAction = () => ({
     type: 'CLEAR'
 });
-
-export default  {
-    addAction,
-    subtractAction,
-    multiplyAction,
-    divideAction,
-    pressKey,
-    equalsAction,
-    clearAction
-}

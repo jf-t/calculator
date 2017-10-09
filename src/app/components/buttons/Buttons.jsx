@@ -3,14 +3,23 @@ import actions from '../../actions/index';
 
 
 const ButtonsComponent = React.createClass({
+    getInitialState: function() {
+        return {actions: this.props.actions};
+    },
     handleClick: function (key) {
         switch (key) {
             case '+':
-
+                this.props.actions.addAction();
+                break;
             case '-':
+                this.props.actions.subtractAction();
+                break;
             case '*':
+                this.props.actions.multiplyAction();
+                break;
             case '/':
-
+                this.props.actions.divideAction();
+                break;
             case '1':
             case '2':
             case '3':
@@ -21,8 +30,14 @@ const ButtonsComponent = React.createClass({
             case '8':
             case '9':
             case '0':
-
+                this.props.actions.pressKey(parseInt(key));
+                break;
             case '=':
+                this.props.actions.equalsAction();
+                break;
+            default:
+                console.error('Invalid key press');
+                break;
         }
     },
     render: function () {

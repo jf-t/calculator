@@ -1,4 +1,5 @@
 const rootReducer = (state = {}, action) => {
+    debugger;
     switch(action.type) {
         case 'ADD':
             return state;
