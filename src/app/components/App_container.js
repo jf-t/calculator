@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import App from './App';
-import { addAction, subtractAction, multiplyAction, divideAction, pressKey, equalsAction, clearAction } from '../actions/index';
+import { addAction, subtractAction, multiplyAction, divideAction, pressKey, equalsAction, clearAction, addDot } from '../actions/index';
 
 function mapStateToProps (state) {
   return {
@@ -17,7 +17,8 @@ function mapDispatchToProps (dispatch) {
             divideAction: function () { dispatch(divideAction()) },
             pressKey: function (key) { dispatch(pressKey(key)) },
             equalsAction: function () { dispatch(equalsAction()) },
-            clearAction: function () { dispatch(clearAction()) }
+            clearAction: function () { dispatch(clearAction()) },
+            addDot: function () { dispatch(addDot()) }
         }
     }
 };

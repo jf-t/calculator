@@ -1,10 +1,17 @@
 const brain = {
-    firstValue: 0,
+    firstValue: '',
     operator: '',
-    secondValue: 0,
+    secondValue: '',
     outputValue: '',
+    fin: false,
 
     addOperator: function (operator) {
+        if (this.fin) {
+            this.fin = false;
+            this.firstValue = this.outputValue;
+            this.secondValue = '';
+        }
+
         if (this.firstValue) {
             this.operator = operator;
         } else {
@@ -12,63 +19,81 @@ const brain = {
         }
 
         this.outputValue = this.firstValue;
+        return this.outputValue;
     },
     valueAddition: function (value) {
-        let existingValue;
-        if (this.operator) {
-            if (this.secondValue === 0) {
-                existingValue = '';
-            } else {
-                existingValue = this.secondValue.toString();
-            }
-
-            existingValue += value.toString();
-            this.secondValue = parseInt(existingValue);
+        if (this.fin) {
+            this.clearValue();
+            this.firstValue = value;
+            this.outputValue = this.firstValue;
         } else {
-            if (this.firstValue === 0) {
-                existingValue = '';
+            if (this.operator != '') {
+                this.secondValue += value;
+                this.outputValue = this.secondValue;
             } else {
-                existingValue = this.firstValue.toString();
+                this.firstValue += value;
+                this.outputValue = this.firstValue;
             }
-
-            existingValue += value.toString();
-            this.firstValue = parseInt(existingValue);
         }
 
-        this.outputValue = existingValue;
-        return existingValue;
+        return this.outputValue;
     },
     equals: function () {
+        this.fin = true;
         if (this._isComplete()) {
-            return this._compile();ha
+            return this._compile();
         } else {
             return this.firstValue;
         }
+
     },
-    clear: function () {
-        this.firstValue = 0;
+    clearValue: function () {
+        this.fin = false;
+        this.firstValue = '';
         this.operator = '';
-        this.secondValue = 0;
+        this.secondValue = '';
+    },
+
+    addDot: function () {
+        if (this.operator != '') {
+            this.secondValue += '.';
+            this.outputValue = this.secondValue;
+        } else {
+            this.firstValue += '.';
+            this.outputValue = this.firstValue;
+        }
+
+        return this.outputValue;
     },
 
     _isComplete: function () {
-        if (this.operator) {
+        if (this.operator != '') {
             return true;
         } else {
             return false;
         }
     },
     _compile: function () {
+        let finalValue;
         switch(this.operator) {
             case '+':
-                return this.firstValue + this.secondValue;
+                finalValue = parseFloat(this.firstValue) + parseFloat(this.secondValue);
+                break;
             case '-':
-                return this.firstValue - this.secondValue;
+                finalValue = parseFloat(this.firstValue) - parseFloat(this.secondValue);
+                break;
             case '*':
-                return this.firstValue * this.secondValue;
+                finalValue = parseFloat(this.firstValue) * parseFloat(this.secondValue);
+                break;
             case '/':
-                return this.firstValue / this.secondValue;
+                finalValue = parseFloat(this.firstValue) / parseFloat(this.secondValue);
+                break;
+            default:
+                return 'error';
         }
+
+        this.outputValue = finalValue;
+        return this.outputValue;
     }
 }
 

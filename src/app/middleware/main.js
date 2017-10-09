@@ -36,7 +36,12 @@ const logicMiddleware = (store) => (next) => (action) => {
 
             return next(action);
         case 'CLEAR':
-            brainValue = brain.clear();
+            brainValue = brain.clearValue();
+            store.dispatch(changeOutput(brainValue));
+
+            return next(action);
+        case 'DOT':
+            brainValue = brain.addDot();
             store.dispatch(changeOutput(brainValue));
 
             return next(action);

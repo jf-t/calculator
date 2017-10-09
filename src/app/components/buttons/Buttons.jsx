@@ -32,8 +32,14 @@ const ButtonsComponent = React.createClass({
             case '0':
                 this.props.actions.pressKey(parseInt(key));
                 break;
+            case '.':
+                this.props.actions.addDot();
+                break;
             case '=':
                 this.props.actions.equalsAction();
+                break;
+            case 'C':
+                this.props.actions.clearAction();
                 break;
             default:
                 console.error('Invalid key press');
@@ -97,6 +103,11 @@ const ButtonsComponent = React.createClass({
                     </div>
                     <div className="button">
                         <button onClick={() => this.handleClick('=')}>=</button>
+                    </div>
+                </div>
+                <div className="clear-button">
+                    <div className="button">
+                        <button onClick={() => this.handleClick('C')}>C</button>
                     </div>
                 </div>
             </div>
