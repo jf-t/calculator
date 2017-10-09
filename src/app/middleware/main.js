@@ -45,6 +45,11 @@ const logicMiddleware = (store) => (next) => (action) => {
             store.dispatch(changeOutput(brainValue));
 
             return next(action);
+        case 'INVERSE':
+            brainValue = brain.inverseAction();
+            store.dispatch(changeOutput(brainValue));
+
+            return next(action);
         default:
             return next(action);
     };

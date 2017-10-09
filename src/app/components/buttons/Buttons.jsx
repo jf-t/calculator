@@ -38,6 +38,9 @@ const ButtonsComponent = React.createClass({
             case '=':
                 this.props.actions.equalsAction();
                 break;
+            case '+-':
+                this.props.actions.inverseAction();
+                break;
             case 'C':
                 this.props.actions.clearAction();
                 break;
@@ -102,12 +105,15 @@ const ButtonsComponent = React.createClass({
                         <button onClick={() => this.handleClick('0')}>0</button>
                     </div>
                     <div className="button">
-                        <button onClick={() => this.handleClick('=')}>=</button>
+                        <button onClick={() => this.handleClick('+-')}>(+/-)</button>
                     </div>
                 </div>
-                <div className="clear-button">
-                    <div className="button">
+                <div className="buttons-row">
+                    <div className="button-big">
                         <button onClick={() => this.handleClick('C')}>C</button>
+                    </div>
+                    <div className="button-big">
+                        <button onClick={() => this.handleClick('=')}>=</button>
                     </div>
                 </div>
             </div>

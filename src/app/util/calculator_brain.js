@@ -10,6 +10,7 @@ const brain = {
             this.fin = false;
             this.firstValue = this.outputValue;
             this.secondValue = '';
+            this.operator = '';
         }
 
         if (this.firstValue) {
@@ -55,11 +56,37 @@ const brain = {
     },
 
     addDot: function () {
+        if (this.fin) {
+            this.fin = false;
+            this.firstValue = this.outputValue;
+            this.secondValue = '';
+            this.operator = '';
+        }
+        
         if (this.operator != '') {
             this.secondValue += '.';
             this.outputValue = this.secondValue;
         } else {
             this.firstValue += '.';
+            this.outputValue = this.firstValue;
+        }
+
+        return this.outputValue;
+    },
+
+    inverseAction: function () {
+        if (this.fin) {
+            this.fin = false;
+            this.firstValue = this.outputValue;
+            this.secondValue = '';
+            this.operator = '';
+        }
+
+        if (this.operator != '') {
+            this.secondValue = (-1 * parseInt(this.secondValue)).toString();
+            this.outputValue = this.secondValue;
+        } else {
+            this.firstValue = (-1 * parseInt(this.firstValue)).toString();
             this.outputValue = this.firstValue;
         }
 

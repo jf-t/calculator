@@ -1,16 +1,14 @@
 .buttons-row {
     width: 100%;
     button {
-        width: calc(100% / 4);
         float: left;
         height: 100px;
     }
-}
-
-.clear-button {
-    width: 100%;
-    button {
-        width: 100%;
-        height: 100px;
+    
+    .button button {
+        width: calc(100% / 4);
+    }
+    .button-big button {
+        width: calc(100% / 2);
     }
 }

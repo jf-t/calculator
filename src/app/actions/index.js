@@ -35,3 +35,8 @@ export const changeOutput = (output) => ({
 export const addDot = () => ({
     type: 'DOT'
 });
+
+
+export const inverseAction = () => ({
+    type: 'INVERSE'
+});
