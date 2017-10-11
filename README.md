@@ -14,3 +14,5 @@ To run jasmine tests:
 - ```npm test```
 
 Note: The jasmine tests are only written to test the calculator logic itself. I only had enough time at the end of the day to write those tests because I felt they are the most meaningful tests to have. I didnt get around to any react/redux tests.. They would be really small anyway.
+
+I wrote the classes for this in pre es6 React, but I know how to write the same components in es6+ React, but I just chose to do it this way.
