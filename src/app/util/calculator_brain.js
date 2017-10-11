@@ -13,6 +13,10 @@ const brain = {
             this.operator = '';
         }
 
+        if (this.secondValue != '') {
+            return this.equals();
+        }
+
         if (this.firstValue) {
             this.operator = operator;
         }
@@ -117,9 +121,9 @@ const brain = {
                 return 'error';
         }
 
-        this.outputValue = finalValue;
+        this.outputValue = finalValue.toString();
         return this.outputValue;
     }
 }
 
-export default brain;
+module.exports = brain;
